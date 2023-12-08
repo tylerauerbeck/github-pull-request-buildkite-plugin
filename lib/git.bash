@@ -7,6 +7,7 @@ function repo_from_origin() {
   local without_prefix
 
   origin="$(git remote get-url origin)"
+  echo $origin
   without_prefix="${origin#*:}"
-  echo "${without_prefix%.git}"
+  echo "${without_prefix%.git}":q!
 }
