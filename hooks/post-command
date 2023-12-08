@@ -35,6 +35,7 @@ ls
 pwd=$(pwd)
 echo "+++ $pwd"
 echo "+++ $repo"
+ls
 
 open_pull_request "$title" "$body" "$head" "$base" "$repo"
 response=$(cat "tmp/github_api_calls/open_pull_request_response.json")
