@@ -27,6 +27,10 @@ head=$(plugin_read_config HEAD "${BUILDKITE_BRANCH}")
 title=$(plugin_read_config TITLE '')
 repo=$(plugin_read_config REPO "$(repo_from_origin)")
 
+pwd=$(pwd)
+echo "+++ $pwd"
+echo "+++ $repo"
+
 open_pull_request "$title" "$body" "$head" "$base" "$repo"
 response=$(cat "tmp/github_api_calls/open_pull_request_response.json")
 pr_number=$(echo "$response" | jq '.number')
