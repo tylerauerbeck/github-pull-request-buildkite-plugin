@@ -27,6 +27,11 @@ head=$(plugin_read_config HEAD "${BUILDKITE_BRANCH}")
 title=$(plugin_read_config TITLE '')
 repo=$(plugin_read_config REPO "$(repo_from_origin)")
 
+dir=$(plugin_read_config DIR '')
+
+echo "+++ $dir"
+ls
+
 pwd=$(pwd)
 echo "+++ $pwd"
 echo "+++ $repo"
